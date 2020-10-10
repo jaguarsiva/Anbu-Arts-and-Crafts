@@ -1,0 +1,21 @@
+
+@font-face
+{
+    font-family: 'BalsamiqSans-regular';
+    src: url('../fonts/BalsamiqSans-Regular.ttf');
+    font-display: block;
+}
+
+@font-face
+{
+    font-family: 'Ubuntu-italic';
+    src: url('../fonts/Ubuntu-Italic.ttf');
+    font-display: block;
+}
+
+@font-face
+{
+    font-family: 'kaushan';
+    src: url('../fonts/KaushanScript-Regular.ttf');
+    font-display: block;
+}
