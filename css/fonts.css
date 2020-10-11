@@ -19,3 +19,24 @@
     src: url('../fonts/KaushanScript-Regular.ttf');
     font-display: block;
 }
+
+@font-face
+{
+    font-family: 'Rocksalt';
+    src: url('../fonts/RockSalt-Regular.ttf');
+    font-display: block;
+}
+
+@font-face
+{
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.ttf');
+    font-display: block;
+}
+
+@font-face
+{
+    font-family: 'Bungee';
+    src: url('../fonts/BungeeInline-Regular.ttf');
+    font-display: block;
+}
