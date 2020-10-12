@@ -70,7 +70,7 @@ nav .container
 
 .company-logo
 {
-    height: 50px; width: 150px;
+    height: 50px; width: 130px;
     display: inline-block;
     position: relative;
     color: #3b556e;
@@ -182,6 +182,7 @@ nav .container
 {
     display: block;
     margin: 0 auto;
+    filter: drop-shadow( 3px 3px 4px black );
 }
 
 /* Products */
@@ -280,7 +281,101 @@ nav .container
     cursor: context-menu;
 }
 
-#products-right span:nth-child(even)
+#products-right span:nth-child(odd)
 {
     color: #f08a5d;
+}
+
+/* Footer */
+
+footer
+{
+    background-color: #1c262f;
+    padding: 50px 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+footer .container { display: flex; }  
+
+footer .container>div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .company-logo { color: #f0f0f0; }
+
+footer .company-logo span:nth-child(1) i { color: #f08a5d; }
+
+.social-links 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-links img
+{
+    height: 25px;
+    opacity: 0.8;
+    filter: drop-shadow( 3px 3px 3px black );
+    transition: transfrom 0.3s ease;
+}
+
+.social-links img:hover { transform: scale3d(1.2,1.2,1.2); opacity: 1; }
+
+/* Footer Links */
+
+footer .container>div:nth-child(3) { margin-left: 75px; }
+
+.footer-links { list-style-type: none; }
+
+.footer-links li { margin: 12px 0; }
+
+.footer-links li:nth-child(1) { margin-top: 0; }
+
+.footer-links li:nth-child(4) { margin-bottom: 0; }
+
+.footer-links li a
+{
+    font-family: 'BalsamiqSans-regular';
+    font-size: 15px;
+    color: #fbfbfd;
+    text-transform: uppercase;
+}
+
+.footer-links li a:hover { color: #f08a5d; }
+
+footer .container>div:nth-child(4)
+{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.dev , .copy
+{
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+.dev { margin-bottom: 18px; color: #fbfbfd; }
+
+.dev a { color: #f08a5d; }
+
+.dev a:hover { text-decoration: underline; }
+
+.copy { color: #64707c; }
+
+.footer-arc
+{
+    position: absolute;
+    bottom: 0; right: 0;
+    z-index: -1;
+    height: 200px; width: 500px;
+    background-color: #1f2d36;
+    border-top-left-radius: 100%;
 }

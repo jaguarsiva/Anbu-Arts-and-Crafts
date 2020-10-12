@@ -21,3 +21,16 @@ hamburger.addEventListener("click", function() {
     }
 });
 
+document.querySelectorAll(".menu-links li a").forEach( item => {
+    item.addEventListener("click", () => {
+        if( menubar.className === "menu-links opened menu-open-anm" )
+        {
+            hamburger.classList.remove("is-active");
+            menubar.className = "menu-links opened menu-close-anm";
+            setTimeout(() => {
+                menubar.className = "menu-links";
+            },400);
+            document.querySelector("html").classList.remove("no-scroll");
+        }
+    });
+});

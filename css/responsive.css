@@ -253,3 +253,38 @@
 
     #products-right>img { height: 450px; left: 50%; transform: translateX(-50%); }
 }
+
+/* Footer Block */
+
+@media only screen and (max-width: 768px)
+{
+    footer .container { flex-direction: column; }
+
+    footer .company-logo { display: none; }
+
+    .footer-links { display: none; }
+
+    .footer-arc
+    {
+        height: 200px; width: 400px;
+        top: -50%; left: 50%; 
+        transform: translateX(-50%);
+        border-top-left-radius: 0%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    .social-links 
+    {
+        width: 300px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
+
+    footer .container>div:nth-child(4)
+    {
+        margin: 50px auto 0;
+        text-align: center;
+    }
+}
+
