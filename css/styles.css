@@ -347,12 +347,202 @@ nav .container
 
 #gallery button { display: none; }
 
+/* About Us */
+
+#about
+{
+    margin: 25px 0 100px;
+    padding: 75px 0;
+    background-color:#1c262f;
+    position: relative;
+    z-index: 2;
+}
+
+.about-arc
+{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 500px; width: 500px;
+    background-color: #1f2d36;
+    border-bottom-right-radius: 85%;
+}
+
+#about .container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about .container>div { flex-basis: 50%; }
+
+.chisel
+{
+    filter: grayscale(100%);
+    opacity: 0.6;
+    display: block;
+    margin: auto;
+}
+
+.about-right h1
+{
+    color: #32506a;
+    font-family: 'kaushan';
+    font-size: 50px;
+    color: #f7faff;
+}
+
+.about-right h3
+{
+    color: #bac4cd;
+    font-family: 'BalsamiqSans-regular';
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 25px;
+}
+
+.about-right p
+{
+    color: #bac4cd;
+    font-family: 'Montserrat';
+    line-height: 2;
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 12px;
+}
+
+.about-right a
+{
+    margin-top: 25px;
+    height: 50px; width: 175px;
+    border: 2px solid #bac4cd;
+    color: #bac4cd;
+    background-color: transparent;
+}
+
+.about-right a:hover 
+{ 
+    border: 2px solid #f08a5d;
+    background-color: #f08a5d;
+    color: white;
+    box-shadow: 0px 3px 6px black;
+}
+
+/* Insta */
+
+#insta { position: relative; }
+
+.insta-circle
+{
+    height: 530px;
+    width: 600px;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    top: 0; left: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: #d2dbe4;
+}
+
+#insta .container
+{
+    margin-bottom: 50px; 
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.insta-text { flex-basis: 40%; display: flex; align-items: center; }
+
+.insta-embed { flex-basis: 20%; position: relative; }
+
+.insta-text h1 , .locate-text h1
+{
+    color: #32506a;
+    font-family: 'kaushan';
+    width: 100%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insta-text h1 img
+{
+    display: inline-block;
+    height: 50px;
+    margin-left: 18px;
+    position: relative;
+    top: 6px;
+}
+
+.insta-bg
+{
+    position: absolute;
+    height: 100px;
+    top: 50%; right: -75px; 
+    transform: translateY(-50%);
+    z-index: -1;
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+
+/* Locate Us */
+
+#locate 
+{ 
+    position: relative;
+    margin: 100px 0;
+    padding-top: 50px;
+}
+
+.locate-circle
+{
+    height: 500px;
+    width: 600px;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    top: 50px; right: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: #d2dbe4;
+}
+
+.maps-bg
+{
+    position: absolute;
+    height: 100px;
+    top: -75px; left: -50px; 
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+
+#locate .container
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.locate-text { flex-basis: 40%; display: flex; align-items: center; }
+
+.locate-map { flex-basis: 40%; position: relative; }
+
+.locate-text h1 img
+{
+    display: inline-block;
+    height: 50px;
+    margin-left: 18px;
+    position: relative;
+    top: 3px;
+}
+
 /* Footer */
 
 footer
 {
     background-color: #1c262f;
-    padding: 50px 0 25px;
+    padding: 50px 0 35px;
     position: relative;
     z-index: 2;
     overflow: hidden;

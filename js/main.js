@@ -42,6 +42,7 @@ const galleryBtn = document.querySelector("#gallery button");
 
 galleryBtn.addEventListener("click", () => { 
     document.querySelector(".gallery-box").classList.toggle("showing-more");
-    document.querySelector(".gallery-box").scrollIntoView(true);
+    if( galleryBtn.innerHTML === "Show More" )
+        document.querySelector(".gallery-box").scrollIntoView(true);
     galleryBtn.innerHTML = galleryBtn.innerHTML === "Show More" ? "Show Less" : "Show More";
 });
