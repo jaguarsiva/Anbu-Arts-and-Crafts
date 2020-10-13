@@ -220,7 +220,7 @@
     .arc.two
     {
         height: 600px; width: 600px;
-        top: -50%; left: 50%; transform: translateX(-50%);
+        top: -425px; left: 50%; transform: translateX(-50%);
         border-bottom-right-radius: 50%;
         border-bottom-left-radius: 50%;
     }
@@ -240,8 +240,6 @@
 
 @media only screen and (max-width: 767px)
 {
-    .arc.two { top: -50%; }
-
     #products-right>span{ flex-basis: 50%; }
 
     #products-right span:nth-child(5) { color:  rgb(240, 255, 255); }
@@ -253,6 +251,8 @@
 
 @media only screen and (max-width: 426px)
 {
+    .arc.two { top: -460px; }
+
     #products-left h1 { font-size: 35px; }
 
     #products-right>span{ flex-basis: 100%; }
@@ -264,18 +264,17 @@
     #products-right>img { height: 450px; left: 50%; transform: translateX(-50%); }
 }
 
-
 /* Gallery Block */
 
 @media only screen and (max-width: 1024px)
 {
     .circle.two
     {
-        top: -20%; left: 50%; 
+        height: 600px; width: 600px;
+        top: -425px; left: 50%; 
         transform: translateX(-50%);
         border-bottom-right-radius: 50%;
         border-bottom-left-radius: 50%;
-        height: 600px; width: 600px;
     }
 
     #gallery h1 { text-align: center; }
@@ -285,11 +284,8 @@
 
 @media only screen and (max-width: 824px)
 {
-    .circle.two { top: -13%; }
-
     .gallery-box>div { flex-basis: 49%; }
 }
-
 
 @media only screen and (max-width: 600px)
 {
@@ -313,6 +309,13 @@
     { display: block; }
 
     #gallery button:hover { background-color: #f08a5d; }
+}
+
+@media only screen and (max-width: 426px)
+{
+    .circle.two { top: -460px; }
+
+    #gallery h1 { font-size: 35px; }
 }
 
 /* Footer Block */
