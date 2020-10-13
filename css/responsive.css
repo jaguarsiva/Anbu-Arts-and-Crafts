@@ -240,9 +240,13 @@
 
 @media only screen and (max-width: 767px)
 {
-    .arc.two { top: -35%; }
+    .arc.two { top: -50%; }
 
-    #products-right>span{ flex-basis: 100%; }
+    #products-right>span{ flex-basis: 50%; }
+
+    #products-right span:nth-child(5) { color:  rgb(240, 255, 255); }
+    
+    #products-right span:nth-child(4) { color: #f08a5d; }
 
     #products-right>img { height: 500px; }
 }
@@ -251,7 +255,64 @@
 {
     #products-left h1 { font-size: 35px; }
 
+    #products-right>span{ flex-basis: 100%; }
+
+    #products-right span:nth-child(5) { color: #f08a5d; }
+    
+    #products-right span:nth-child(4) { color:  rgb(240, 255, 255); }
+
     #products-right>img { height: 450px; left: 50%; transform: translateX(-50%); }
+}
+
+
+/* Gallery Block */
+
+@media only screen and (max-width: 1024px)
+{
+    .circle.two
+    {
+        top: -20%; left: 50%; 
+        transform: translateX(-50%);
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        height: 600px; width: 600px;
+    }
+
+    #gallery h1 { text-align: center; }
+
+    .gallery-box>div { flex-basis: 32%; }
+}
+
+@media only screen and (max-width: 824px)
+{
+    .circle.two { top: -13%; }
+
+    .gallery-box>div { flex-basis: 49%; }
+}
+
+
+@media only screen and (max-width: 600px)
+{
+    .gallery-box>div { flex-basis: auto; padding: 50px 50px 25px; width: 300px; }
+
+    #gallery button 
+    { 
+        display: block;
+        margin: 25px auto;
+        border: none;
+        height: 50px; width: 175px;
+        background-color: #1c262f;  
+        color: white;
+        box-shadow: 0px 9px 9px -9px black;
+    }
+
+    .gallery-box>div:nth-child(even) , .gallery-box>div:nth-child(3n) 
+    { display: none; }
+
+    .gallery-box.showing-more>div:nth-child(even) , .gallery-box.showing-more>div:nth-child(3n) 
+    { display: block; }
+
+    #gallery button:hover { background-color: #f08a5d; }
 }
 
 /* Footer Block */
@@ -266,15 +327,14 @@
 
     .footer-arc
     {
-        height: 200px; width: 400px;
-        top: -50%; left: 50%; 
+        height: 300px; width: 500px;
+        bottom: -90%; left: 50%;
         transform: translateX(-50%);
-        border-top-left-radius: 0%;
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
     }
 
-    .social-links 
+    .social-links
     {
         width: 300px;
         margin: 0 auto;
