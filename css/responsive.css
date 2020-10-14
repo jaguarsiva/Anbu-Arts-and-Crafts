@@ -396,6 +396,11 @@
 
 /* Maps Block */
 
+@media only screen and (max-width: 1050px)
+{
+    .locate-text { flex-basis: 20%; }
+}
+
 @media only screen and (max-width: 1023px)
 {
     .maps-bg , .locate-circle { display: none; }
@@ -443,4 +448,35 @@
         margin: 50px auto 0;
         text-align: center;
     }
+}
+
+#insta .slide-left-in { animation: slide-left-in 0.75s ease-in 0.25s both; }
+
+.embed-1.slide-right-in { animation: slide-right-in 0.75s ease-in 0.75s both; }
+
+.embed-2.slide-right-in { animation: slide-right-in 0.75s ease-in 1.25s both; }
+
+#locate .slide-right-in { animation: slide-right-in 0.75s ease-in 0.25s both; }
+
+.maps-bg.slide-left-in { animation: slide-left-in 0.75s ease-in 0.75s both; }
+
+.locate-map.scale-up 
+{ 
+    animation: scale-up 0.75s ease-in 1.5s both;
+    transform-origin: top left;
+}
+
+@keyframes slide-left-in
+{
+    from { transform: translateX(-1000px); }
+}
+
+@keyframes slide-right-in
+{
+    from { transform: translateX(1000px); }
+}
+
+@keyframes scale-up
+{
+    from { transform: scale(0,0); }
 }

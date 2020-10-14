@@ -46,3 +46,51 @@ galleryBtn.addEventListener("click", () => {
         document.querySelector(".gallery-box").scrollIntoView(true);
     galleryBtn.innerHTML = galleryBtn.innerHTML === "Show More" ? "Show Less" : "Show More";
 });
+
+
+// Observer
+
+const insta = document.querySelector("#insta");
+const locate = document.querySelector("#locate");
+const details = { };
+
+const instaObserver = new IntersectionObserver( (entries,instaObserver) => {
+    entries.forEach( entry => {
+        if( entry.isIntersecting )
+        {
+            insta.querySelector(".insta-circle").classList.add("slide-left-in");
+            insta.querySelector(".insta-text").classList.add("slide-left-in");
+            insta.querySelector(".embed-1").classList.add("slide-right-in");
+            insta.querySelector(".embed-2").classList.add("slide-right-in");
+        }
+        else
+        {
+            insta.querySelector(".insta-circle").classList.remove("slide-left-in");
+            insta.querySelector(".insta-text").classList.remove("slide-left-in");
+            insta.querySelector(".embed-1").classList.remove("slide-right-in");
+            insta.querySelector(".embed-2").classList.remove("slide-right-in");
+        }
+    });
+} , details );
+
+const locateObserver = new IntersectionObserver( (entries, locateObserver) => {
+    entries.forEach( entry => {
+        if( entry.isIntersecting )
+        {
+            locate.querySelector(".locate-circle").classList.add("slide-right-in");
+            locate.querySelector(".locate-text").classList.add("slide-right-in");
+            locate.querySelector(".maps-bg").classList.add("slide-left-in");
+            locate.querySelector(".locate-map").classList.add("scale-up");
+        }
+        else
+        {
+            locate.querySelector(".locate-circle").classList.remove("slide-right-in");
+            locate.querySelector(".locate-text").classList.remove("slide-right-in");
+            locate.querySelector(".maps-bg").classList.remove("slide-left-in");
+            locate.querySelector(".locate-map").classList.remove("scale-up");
+        }
+    });
+} , details );
+
+instaObserver.observe(insta);
+locateObserver.observe(locate);

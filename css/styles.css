@@ -39,6 +39,30 @@ a { text-decoration: none; color: #444444;}
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0px 12px 12px -12px black;
+}
+
+.btn::after
+{
+    content: "";
+    height: 100%; width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    background-color: rgb(0, 0, 0,0.5);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in;
+
+}
+
+.btn:hover::after
+{
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .btn:focus { outline: none; }
@@ -107,9 +131,30 @@ nav .container
     font-family: 'BalsamiqSans-regular';
     font-size: 18px;
     color: #64707c;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-links li a::after
+{
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    border-radius: 25px;
+    height: 2px; width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease-in;
 }
 
 .menu-links li a:hover { color: #ca366f; }
+
+.menu-links li a:hover::after 
+{ 
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 .hamburger { display: none; }
 
@@ -131,7 +176,6 @@ nav .container
     position: absolute;
     z-index: -1;
 }
-
 
 #banner-text, #banner-img { flex-basis: 50%; margin: 0 auto; }
 
@@ -163,14 +207,10 @@ nav .container
 
 #banner-text a 
 { 
-    box-shadow: 0px 12px 12px -12px black;
     height: 50px; width: 175px;
     background-color: #766ba7;
     color: white;
 }
-
-#banner-text a:hover
-{ background-color: black; box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.5); }
 
 #banner-img{ position: relative; }
 
@@ -229,7 +269,7 @@ nav .container
     margin: 35px 0 50px;
 }
 
-#products-left a
+.dark-btn
 {
     height: 50px; width: 175px;
     border: 2px solid #bac4cd;
@@ -237,12 +277,16 @@ nav .container
     background-color: transparent;
 }
 
-#products-left a:hover 
-{ 
+.dark-btn::after
+{
     border: 2px solid #f08a5d;
     background-color: #f08a5d;
-    color: white;
-    box-shadow: 0px 3px 6px black;
+}
+
+.dark-btn:hover
+{
+    border: none;
+    color: white; 
 }
 
 #products-right
@@ -405,22 +449,7 @@ nav .container
     margin-top: 12px;
 }
 
-.about-right a
-{
-    margin-top: 25px;
-    height: 50px; width: 175px;
-    border: 2px solid #bac4cd;
-    color: #bac4cd;
-    background-color: transparent;
-}
-
-.about-right a:hover 
-{ 
-    border: 2px solid #f08a5d;
-    background-color: #f08a5d;
-    color: white;
-    box-shadow: 0px 3px 6px black;
-}
+.about-right a { margin-top: 25px; }
 
 /* Insta */
 
@@ -440,15 +469,16 @@ nav .container
 
 #insta .container
 {
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .insta-text { flex-basis: 40%; display: flex; align-items: center; }
 
-.insta-embed { flex-basis: 20%; position: relative; }
+.insta-embed { flex-basis: 20%; }
 
 .insta-text h1 , .locate-text h1
 {
@@ -468,17 +498,18 @@ nav .container
     margin-left: 18px;
     position: relative;
     top: 6px;
+    filter: drop-shadow(0px 2px 2px black);
 }
 
 .insta-bg
 {
     position: absolute;
     height: 100px;
-    top: 50%; right: -75px; 
+    top: 50%; right: 0; 
     transform: translateY(-50%);
     z-index: -1;
     opacity: 0.2;
-    filter: grayscale(100%);
+    filter: grayscale(100%) drop-shadow(0px 3px 3px black);
 }
 
 /* Locate Us */
@@ -505,8 +536,9 @@ nav .container
 .maps-bg
 {
     position: absolute;
+    z-index: -1;
     height: 100px;
-    top: -75px; left: -50px; 
+    top: -75px; left: 0; 
     opacity: 0.2;
     filter: grayscale(100%);
 }
@@ -516,11 +548,12 @@ nav .container
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .locate-text { flex-basis: 40%; display: flex; align-items: center; }
 
-.locate-map { flex-basis: 40%; position: relative; }
+.locate-map { flex-basis: 40%; }
 
 .locate-text h1 img
 {
@@ -535,7 +568,7 @@ nav .container
 
 .mapouter
 {
-    position:relative;
+    position: relative;
     text-align:right;
     height: 500px; width:600px;
 }
