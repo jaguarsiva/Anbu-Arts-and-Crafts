@@ -9,6 +9,11 @@
     margin: 0 auto; 
 }
 
+@media only screen and (max-width: 426px)
+{
+    .main-headings { font-size: 35px; }
+}
+
 /* Navbar Block */
 
 @media only screen and (max-width: 830px)
@@ -253,8 +258,6 @@
 {
     .arc.two { top: -460px; }
 
-    #products-left h1 { font-size: 35px; }
-
     #products-right>span{ flex-basis: 100%; }
 
     #products-right span:nth-child(5) { color: #f08a5d; }
@@ -268,6 +271,8 @@
 
 @media only screen and (max-width: 1024px)
 {
+    #gallery { padding-bottom: 0; }
+
     .circle.two
     {
         height: 600px; width: 600px;
@@ -280,42 +285,48 @@
     #gallery h1 { text-align: center; }
 
     .gallery-box>div { flex-basis: 32%; }
+
+    .gallery-box>div:nth-child(3n) { display: none; }
 }
 
 @media only screen and (max-width: 824px)
 {
     .gallery-box>div { flex-basis: 49%; }
+
+    .gallery-box>div:nth-child(3n) { display: flex; }
 }
 
 @media only screen and (max-width: 600px)
 {
     .gallery-box>div { flex-basis: auto; padding: 50px 50px 25px; width: 300px; }
 
-    #gallery button 
-    { 
-        display: block;
-        margin: 25px auto;
-        border: none;
-        height: 50px; width: 175px;
-        background-color: #766ba7;  
-        color: white;
-        box-shadow: 0px 9px 9px -9px black;
-    }
-
-    .gallery-box>div:nth-child(even) , .gallery-box>div:nth-child(3n) 
-    { display: none; }
-
-    .gallery-box.showing-more>div:nth-child(even) , .gallery-box.showing-more>div:nth-child(3n) 
-    { display: block; }
-
-    #gallery button:hover { background-color: black; }
+    .gallery-box>div:nth-child(even) { display: none; }
 }
 
 @media only screen and (max-width: 426px)
 {
     .circle.two { top: -460px; }
+}
 
-    #gallery h1 { font-size: 35px; }
+/* Moment Block */
+
+@media only screen and (max-width: 1023px)
+{
+    #moment { margin-top: 25px; }
+
+    .moment-arc { display: none; }
+
+    #moment p { width: 80%; }
+}
+
+@media only screen and (max-width: 768px)
+{
+    #moment p { width: 100%; }
+}
+
+@media only screen and (max-width: 575px)
+{
+    #moment .container img { width: 100%; height: auto; }
 }
 
 /* About Block */
@@ -351,8 +362,6 @@
 
 @media only screen and (max-width: 426px)
 {
-    .about-right h1 { font-size: 35px; }
-
     .about-right h3 { font-size: 22px; }
 }
 
@@ -415,6 +424,8 @@
 @media only screen and (max-width: 625px)
 {   
     .mapouter , .gmap_canvas ,.gmap_canvas iframe { height: 500px; width: 100%; }
+
+    #locate { margin-bottom: 50px; }
 }
 
 /* Footer Block */
@@ -430,7 +441,7 @@
     .footer-arc
     {
         height: 300px; width: 500px;
-        bottom: -90%; left: 50%;
+        bottom: -175px; left: 50%;
         transform: translateX(-50%);
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
@@ -443,6 +454,8 @@
         justify-content: space-evenly;
     }
 
+    .social-links img { height: 35px; }
+
     footer .container>div:nth-child(4)
     {
         margin: 50px auto 0;
@@ -450,33 +463,37 @@
     }
 }
 
-#insta .slide-left-in { animation: slide-left-in 0.75s ease-in 0.25s both; }
-
-.embed-1.slide-right-in { animation: slide-right-in 0.75s ease-in 0.75s both; }
-
-.embed-2.slide-right-in { animation: slide-right-in 0.75s ease-in 1.25s both; }
-
-#locate .slide-right-in { animation: slide-right-in 0.75s ease-in 0.25s both; }
-
-.maps-bg.slide-left-in { animation: slide-left-in 0.75s ease-in 0.75s both; }
-
-.locate-map.scale-up 
-{ 
-    animation: scale-up 0.75s ease-in 1.5s both;
-    transform-origin: top left;
-}
-
-@keyframes slide-left-in
+@media only screen and (min-width: 1024px)
 {
-    from { transform: translateX(-1000px); }
-}
+    .slide-left-in { animation: slide-left-in 0.75s ease-in 0.25s both; }
 
-@keyframes slide-right-in
-{
-    from { transform: translateX(1000px); }
-}
+    .slide-right-in { animation: slide-right-in 0.75s ease-in 0.25s both; }
 
-@keyframes scale-up
-{
-    from { transform: scale(0,0); }
+    .locate-map.scale-up
+    { 
+        animation: scale-up 0.75s ease-in 0.25s both;
+        transform-origin: top left;
+    }
+
+    .fade-in { animation: fade-in 1.5s ease-in 1s both; }
+
+    @keyframes slide-left-in
+    {
+        from { transform: translateX(-1000px); }
+    }
+
+    @keyframes slide-right-in
+    {
+        from { transform: translateX(1000px); }
+    }
+
+    @keyframes scale-up
+    {
+        from { transform: scale(0,0); }
+    }
+
+    @keyframes fade-in
+    {
+        from { opacity: 0; }
+    }
 }

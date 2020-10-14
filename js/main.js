@@ -35,62 +35,35 @@ document.querySelectorAll(".menu-links li a").forEach( item => {
     });
 });
 
-
-// Gallery
-
-const galleryBtn = document.querySelector("#gallery button");
-
-galleryBtn.addEventListener("click", () => { 
-    document.querySelector(".gallery-box").classList.toggle("showing-more");
-    if( galleryBtn.innerHTML === "Show More" )
-        document.querySelector(".gallery-box").scrollIntoView(true);
-    galleryBtn.innerHTML = galleryBtn.innerHTML === "Show More" ? "Show Less" : "Show More";
-});
-
-
 // Observer
 
 const insta = document.querySelector("#insta");
 const locate = document.querySelector("#locate");
+const momemt = document.querySelector("#moment");
 const details = { };
 
-const instaObserver = new IntersectionObserver( (entries,instaObserver) => {
+const observer = new IntersectionObserver( (entries,observer) => {
     entries.forEach( entry => {
-        if( entry.isIntersecting )
+        if( entry.target === insta )
         {
-            insta.querySelector(".insta-circle").classList.add("slide-left-in");
-            insta.querySelector(".insta-text").classList.add("slide-left-in");
-            insta.querySelector(".embed-1").classList.add("slide-right-in");
-            insta.querySelector(".embed-2").classList.add("slide-right-in");
+            insta.querySelector(".insta-circle").classList.toggle("slide-left-in");
+            insta.querySelector(".insta-text").classList.toggle("slide-left-in");
         }
-        else
+        else if( entry.target === locate )
         {
-            insta.querySelector(".insta-circle").classList.remove("slide-left-in");
-            insta.querySelector(".insta-text").classList.remove("slide-left-in");
-            insta.querySelector(".embed-1").classList.remove("slide-right-in");
-            insta.querySelector(".embed-2").classList.remove("slide-right-in");
+            locate.querySelector(".locate-circle").classList.toggle("slide-right-in");
+            locate.querySelector(".locate-text").classList.toggle("slide-right-in");
+            locate.querySelector(".locate-map").classList.toggle("scale-up");
+        }
+        else if( entry.target === moment )
+        {
+            momemt.querySelector(".left").classList.toggle("slide-left-in");
+            momemt.querySelector(".right").classList.toggle("slide-right-in");
+            momemt.querySelector(".container").classList.toggle("fade-in");
         }
     });
 } , details );
 
-const locateObserver = new IntersectionObserver( (entries, locateObserver) => {
-    entries.forEach( entry => {
-        if( entry.isIntersecting )
-        {
-            locate.querySelector(".locate-circle").classList.add("slide-right-in");
-            locate.querySelector(".locate-text").classList.add("slide-right-in");
-            locate.querySelector(".maps-bg").classList.add("slide-left-in");
-            locate.querySelector(".locate-map").classList.add("scale-up");
-        }
-        else
-        {
-            locate.querySelector(".locate-circle").classList.remove("slide-right-in");
-            locate.querySelector(".locate-text").classList.remove("slide-right-in");
-            locate.querySelector(".maps-bg").classList.remove("slide-left-in");
-            locate.querySelector(".locate-map").classList.remove("scale-up");
-        }
-    });
-} , details );
-
-instaObserver.observe(insta);
-locateObserver.observe(locate);
+observer.observe(insta);
+observer.observe(locate);
+observer.observe(momemt)
