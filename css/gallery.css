@@ -10,6 +10,16 @@ body
     overflow: visible;
 }
 
+.img-circle
+{
+    height: 700px; width: 700px;
+    background-color: #d2dbe4;
+    border-bottom-left-radius: 100%;
+    position: absolute;
+    top: 0; right: 0;
+    z-index: -1;
+}
+
 .top-bar
 {
     position: -webkit-sticky;
@@ -43,7 +53,7 @@ body
     width: 400px; margin: 0 auto;
     text-align: center;
     position: relative;
-    cursor: pointer;
+    cursor: context-menu;
     padding-bottom: 15px;
 }
 
@@ -150,6 +160,15 @@ body
         -webkit-column-count: 2;
         column-count: 2;
     }
+
+    .img-circle
+    {
+        height: 600px; width: 600px;
+        top: -350px; left: 50%; 
+        transform: translateX(-50%);
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
 }
 
 @media only screen and (max-width: 600px)
@@ -168,6 +187,15 @@ body
     .fluid-box img { height: 300px; width: auto; }
 
     nav .company-logo { position: absolute; left: 50%; transform: translateX(-50%); }
+
+    .img-circle
+    {
+        height: 50%; width: 100%;
+        top: -150px; left: 50%; 
+        transform: translateX(-50%);
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
 }
 
 @media only screen and (max-width: 400px)
