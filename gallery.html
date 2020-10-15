@@ -7,14 +7,95 @@
     
     <title> Anbu Arts and Crafts </title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/gallery.css">
 
 </head>
 <body>
-    
+
+    <nav>
+        <div class="container">
+            <div class="company-logo">
+                <span> <i>A</i>nbu</span>
+                <span>Arts &</span>
+                <span>Crafts</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="top-bar">
+            <h1 class="main-headings">Products <span>Gallery</span></h1>
+        </div>
+
+        <div class="container">
+            <div class="fluid-box">
+                <div class="img-box"><img src="./images/Gallery/gallery1.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery2.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery3.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery4.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery5.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery6.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/gallery7.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide1.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide2.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide3.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide4.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide5.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide6.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide7.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/Gallery/slide8.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/lord_ganesha.png" alt="Image"></div>
+                <div class="img-box"><img src="./images/moment-bg.png" alt="Image"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        var observer = new IntersectionObserver( (entries,observer) => {
+            entries.forEach( entry => { 
+                if( entry.isIntersecting )
+                    document.querySelector(".top-bar").className = "top-bar";
+                else                    
+                    document.querySelector(".top-bar").className = "top-bar shadow";
+            });
+        }, {});
+
+        observer.observe( document.querySelector("nav") );
+    </script>
+
+<footer>
     <div class="container">
-        <h1 class="main-headings">Products <span>Gallery</span></h1>
+        <div class="footer-arc"></div>
+        <div>
+            <div class="company-logo">
+                <span> <i>A</i>nbu</span>
+                <span>Arts &</span>
+                <span>Crafts</span>
+            </div>
+            <div class="social-links">
+                <a href="https://api.whatsapp.com/send?phone=918489319960"><img src="./images/whatsapp.png" alt="whatsapp"></a>
+                <a href="https://www.instagram.com/_wooden_sculptures_/"><img src="./images/insta.png" alt="insta"></a>
+                <a href="https://www.facebook.com/Anbu-Arts-and-Crafts-AnnaduraiS-1451996355106653"><img src="./images/fb.png" alt="fb"></a>
+                <a href="mailto:arvindgowri@gmail.com"><img src="./images/gmail.png" alt="gmail"></a>
+            </div>
+        </div>
+        <div>
+            <ul class="footer-links"> 
+                <li> <a href="#products" class="fancy-links">Products</a> </li>
+                <li> <a href="#gallery" class="fancy-links">Gallery</a> </li>
+                <li> <a href="#about" class="fancy-links">About</a> </li>
+                <li> <a href="#locate" class="fancy-links">Locate</a> </li>
+            </ul>   
+        </div>
+        <div>
+            <p class="dev"> Developed by <a href="https://sivachandran.netlify.app/">Siva Chandran.</a></p>
+            <p class="copy"> &copy; All rights resevered.</p>
+        </div>
     </div>
+</footer>
 
 </body>
 </html>

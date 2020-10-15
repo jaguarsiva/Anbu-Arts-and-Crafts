@@ -1,71 +1,77 @@
 
 @import url('./fonts.css');
 
-/* General Styling */
-
-*
-{ 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0;
-}
-
-html 
-{ 
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
+/* Main */
 
 body
 {
-    max-width: 100vw;
-    overflow-x: hidden;
-    background-color: #eef3f9;
-    scrollbar-width: thin;
-    scrollbar-color: rgb(119, 108, 167,0.5) transparent;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: visible;
 }
 
-::-webkit-scrollbar { width: 15px; }
-
-::-webkit-scrollbar-track { background: transparent; }
- 
-::-webkit-scrollbar-thumb { background: rgb(119, 108, 167,0.5); border-radius: 25px; }
-
-.container
+.top-bar
 {
-    max-width: 1330px;
-    padding: 0 15px;
-    margin: 50px auto;
-    text-align: center; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; z-index: 5;
+    padding: 12px 0 25px;
+    width: 100%;
 }
 
-.main-headings
+.top-bar.shadow 
+{ 
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.5); 
+    background-color: #1c262f;
+    animation: slide-down 0.3s ease-out;
+}
+
+@keyframes slide-down
 {
-    font-family: 'kaushan';
-    font-size: 50px;
+    from { transform: translateY(-200px); }
+}
+
+.top-bar.shadow h1 { color: #f7faff; }
+
+.top-bar.shadow h1::after { background-color: #f08a5d; }
+
+.top-bar.shadow h1 span { color: #f08a5d; }
+
+.top-bar h1
+{
     color: #32506a;
+    width: 400px; margin: 0 auto;
+    text-align: center;
     position: relative;
-    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 15px;
 }
 
-.main-headings span { color: #766ba7; }
+.top-bar h1 span { color: #766ba7; }
 
-.main-headings::after
+.top-bar h1::after
 {
     content: "";
     position: absolute;
+    bottom: 0; left: 0;
     width: 100%; height: 5px;
-    bottom: -20px; left: 0;
     background-color: #766ba7;
     transform: scaleX(0.4);
+    transition: transform 0.3s ease-out;
     border-radius: 12px;
+}
+
+.top-bar h1:hover::after
+{
+    transform: scaleX(0.8);
 }
 
 .fluid-box
 {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
+    margin: 40px auto 100px;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
     -moz-column-gap: 12px;
     -webkit-column-gap: 12px;
     column-gap: 12px;
@@ -76,7 +82,97 @@ body
     width: 100%;
     margin-top: 12px;
     display: inline-block;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    padding: 25px 35px;
+    cursor: pointer;
+    background-color: #1c262f;
+    padding: 50px 0;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0,0.5);
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.img-box>img
+{
+    max-height: 500px;
+    max-width: 250px;
+    display: block;
+    margin: auto;
+    filter: drop-shadow( 0px 3px 3px black );
+    opacity: 0.8;
+}
+
+.img-box::after
+{
+    content: "3ft Ganesa Statue";
+    width: 100%; height: 75px;
+    background-color: #2e404e;
+    position: absolute;
+    bottom: 0; left: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.25s ease-in;
+    box-shadow: 0px 0px 12px rgb(0, 0, 0,0.45);
+    color: #c3cacf;
+    font-family: "kaushan";
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 6px 6px;
+}
+
+.img-box:hover 
+{ 
+    transform: scale3d(1.05,1.05,1.05); 
+    box-shadow: 0px 2px 6px rgb(0, 0, 0,0.5);
+    padding-top: 12px; padding-bottom: 100px;
+    align-items: flex-start;
+}
+
+.img-box:hover::after { transform: scaleY(1); }
+
+.img-box:hover>img { opacity: 1; }
+
+@media only screen and (max-width: 1168px)
+{
+    .fluid-box
+    {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (max-width: 900px)
+{
+    .fluid-box
+    {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    .fluid-box
+    {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        width: 300px;
+        column-gap: 0px;
+        -moz-column-gap: 0px;
+        -webkit-column-gap: 0px;
+    }
+
+    .fluid-box img { height: 300px; width: auto; }
+
+    nav .company-logo { position: absolute; left: 50%; transform: translateX(-50%); }
+}
+
+@media only screen and (max-width: 400px)
+{
+    .top-bar h1 { width: auto; }
+
+    main .container { padding: 0 10px; }
 }

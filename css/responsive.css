@@ -447,11 +447,13 @@
         border-top-right-radius: 50%;
     }
 
+    footer .container>div:nth-child(2) { width: auto; }
+
     .social-links
     {
-        width: 300px;
+        width: 250px;
         margin: 0 auto;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .social-links img { height: 35px; }
@@ -465,17 +467,17 @@
 
 @media only screen and (min-width: 1024px)
 {
-    .slide-left-in { animation: slide-left-in 0.75s ease-in 0.25s both; }
+    .slide-left-in { animation: slide-left-in 0.75s ease-out 0.25s both; }
 
-    .slide-right-in { animation: slide-right-in 0.75s ease-in 0.25s both; }
+    .slide-right-in { animation: slide-right-in 0.75s ease-out 0.25s both; }
 
     .locate-map.scale-up
     { 
-        animation: scale-up 0.75s ease-in 0.25s both;
+        animation: scale-up 1s ease-out 1s both;
         transform-origin: top left;
     }
 
-    .fade-in { animation: fade-in 1.5s ease-in 1s both; }
+    .fade-in { animation: fade-in 1s ease-out 1s both; transform-origin: top center; }
 
     @keyframes slide-left-in
     {
@@ -494,6 +496,6 @@
 
     @keyframes fade-in
     {
-        from { opacity: 0; }
+        from { transform: scale(0,0); }
     }
 }

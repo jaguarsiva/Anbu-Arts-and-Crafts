@@ -40,7 +40,7 @@ document.querySelectorAll(".menu-links li a").forEach( item => {
 const insta = document.querySelector("#insta");
 const locate = document.querySelector("#locate");
 const momemt = document.querySelector("#moment");
-const details = { };
+const details = { threshold: 0.05 };
 
 const observer = new IntersectionObserver( (entries,observer) => {
     entries.forEach( entry => {
