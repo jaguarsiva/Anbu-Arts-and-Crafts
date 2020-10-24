@@ -396,7 +396,6 @@ nav .container
 
 .gallery-box>div::after
 {
-    content: "3ft Ganesa Statue";
     width: 100%; height: 75px;
     background-color: #2e404e;
     position: absolute;
@@ -413,6 +412,27 @@ nav .container
     align-items: center;
     border-radius: 0 0 6px 6px;
 }
+
+/* Gallery Image Names */
+
+.gallery-box>div:nth-child(1)::after { content: "2ft Ganesha Statue"; }
+
+.gallery-box>div:nth-child(2)::after { content: "3ft Sarawathi Statue"; }
+
+.gallery-box>div:nth-child(3)::after { content: "3ft Krishna Statue"; }
+
+.gallery-box>div:nth-child(4)::after { content: "7ft Lakshmi Statue"; }
+
+.gallery-box>div:nth-child(5)::after { content: "3ft Ganesha Statue"; }
+
+.gallery-box>div:nth-child(6)::after { content: "2ft Venkateshwara Statue"; }
+
+.gallery-box>div:nth-child(7)::after { content: "3ft Design Statue"; }
+
+.gallery-box>div:nth-child(8)::after { content: "5ft Mandapam"; }
+
+/*  */
+
 
 .gallery-box>div:hover::after { transform: scaleY(1); }
 
@@ -723,7 +743,12 @@ footer
     overflow: hidden;
 }
 
-footer .container { display: flex; }  
+footer .container 
+{ 
+    min-height: 100px;
+    display: flex; 
+    justify-content: space-between;
+}  
 
 footer .container>div:nth-child(2)
 {
@@ -753,36 +778,49 @@ footer .company-logo span:nth-child(1) i { color: #f08a5d; }
 
 .social-links img:hover { transform: scale3d(1.2,1.2,1.2); opacity: 1; }
 
-/* Footer Links */
+/* Address and Phone no */
 
-footer .container>div:nth-child(3) { margin-left: 75px; }
-
-.footer-links { list-style-type: none; }
-
-.footer-links li { margin: 12px 0; }
-
-.footer-links li:nth-child(1) { margin-top: 0; }
-
-.footer-links li:nth-child(4) { margin-bottom: 0; }
-
-.footer-links li a
+footer .container>div:nth-child(3)
 {
-    font-family: 'BalsamiqSans-regular';
-    font-size: 15px;
-    color: #fbfbfd;
-    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-footer .fancy-links::after { height: 1px; }
+.address, .phone
+{
+    display: flex;
+    align-items: center;
+}
+.address , .phone a
+{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    color: #fbfbfd;
+}
 
-.footer-links li a:hover { color: #f08a5d; }
+.phone a { margin-left: 6px; }
+
+.phone a:nth-child(1) { margin-left: 0; }
+
+.phone a:hover { color: #f08a5d; }
+
+.address { margin-bottom: 12px; }
+
+.address img, .phone img
+{
+    height: 25px;
+    margin-right: 12px;
+}
+
+/*  */
 
 footer .container>div:nth-child(4)
 {
-    margin-left: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .dev , .copy
